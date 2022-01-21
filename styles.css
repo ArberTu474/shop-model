@@ -1,0 +1,249 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap");
+:root {
+  --clr-primary-color: #d8ffc5;
+  --clr-primary-color-hover: #c7fcad;
+  --clr-primary-color-active-icon: #123500;
+  --clr-primary-color-active-label: #404c38;
+
+  --clr-secondary-color-non-active-icon: #4d4e51;
+  --clr-secondary-color-non-active-label: #4e514d;
+
+  --clr-fab-color: #b7f397;
+  --clr-fab-color-hover: #9de278;
+
+  --clr-header-elements-color: #4e514d;
+  --clr-section-color-text: #4e4f53;
+
+  --clr-bg-color: #fdfdf5;
+  --clr-bg-nav-color: #f4fbf1;
+  --clr-bg-card-color: #f7f7f7;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  outline: transparent;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  background-color: var(--clr-bg-color);
+}
+
+/*---------------- Header ----------------*/
+
+header {
+  background-color: var(--clr-bg-color);
+  color: var(--clr-header-elements-color);
+  position: fixed;
+  width: 100%;
+  top: 1;
+}
+
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2em;
+}
+
+.logo {
+  font-size: 2.2rem;
+  font-weight: 400;
+}
+
+.header-icons-account {
+  font-size: 3em;
+}
+
+.header-icons-search {
+  font-size: 2.5em;
+}
+
+/*---------------- NavBar ----------------*/
+
+nav {
+  background-color: var(--clr-bg-nav-color);
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 1.2em;
+}
+
+.nav-icon-container {
+  background-color: var(--clr-primary-color);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 6.4em;
+  height: 3.2em;
+  border-radius: 500px;
+}
+
+.nav-icon {
+  font-size: 2.7em;
+}
+
+.nav-title {
+  font-size: 1.2rem;
+  font-weight: 500;
+  text-align: center;
+  margin: 0.5em 0 1em 0;
+}
+
+.nav-item {
+  cursor: pointer;
+  color: var(--clr-primary-color-active-icon);
+}
+
+/*---------------- FAB ----------------*/
+
+.fab {
+  background-color: var(--clr-fab-color);
+  position: fixed;
+  border-radius: 16px;
+  box-shadow: 0px 4px 6px rgba(129, 129, 129, 0.23);
+  right: 2.5em;
+  bottom: 10em;
+  cursor: pointer;
+  transition: background-color 300ms;
+}
+
+.fab:hover,
+.fab:focus {
+  background-color: var(--clr-fab-color-hover);
+}
+
+.fab-container {
+  padding: 1.6rem;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fab-icon {
+  color: var(--clr-primary-color-active-icon);
+  font-size: 2.7rem;
+}
+
+/*---------------- Main ----------------*/
+
+main {
+  padding: 9.4em 3em;
+}
+
+/*---------------- Hero ----------------*/
+
+.hero-container {
+  background-image: url("img/hero.jfif");
+  height: 18em;
+  padding: 2.5em 2.5em 1.5em 2.5em;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 28px;
+  display: flex;
+  align-items: flex-end;
+}
+
+.hero-title {
+  color: #fff;
+  font-size: 3.9em;
+}
+
+/*---------------- Slider ----------------*/
+
+.popular-devices-title {
+  font-size: 2.5em;
+  font-weight: 500;
+  padding: 3rem 0;
+  color: var(--clr-section-color-text);
+}
+
+.scroll-menu {
+  overflow: auto;
+  border-radius: 16px;
+  display: flex;
+}
+
+.item {
+  display: inline-block;
+  background-color: var(--clr-bg-card-color);
+  padding: 1.5em;
+  border-radius: 16px;
+  box-shadow: 0 0 6px 2px rgba(143, 143, 143, 0.1);
+}
+
+.item + .item {
+  margin-left: 2.2em;
+}
+
+.item-name {
+  font-size: 1.5rem;
+  color: var(--clr-section-color-text);
+  font-weight: 400;
+}
+
+.name-container {
+  width: 15em;
+  word-wrap: break-word;
+}
+
+.item-image-container {
+  background-image: url("img/iphone.jpg");
+  mix-blend-mode: multiply;
+  height: 16em;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.item-action-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.buy-button-container {
+  color: var(--clr-primary-color-active-icon);
+  background-color: var(--clr-fab-color);
+  border-radius: 8px;
+  padding: 0.8em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.8em;
+  transition: background-color 300ms;
+}
+
+.buy-button-container:hover {
+  background-color: var(--clr-fab-color-hover);
+}
+
+.buy-button {
+  color: var(--clr-primary-color-active-icon);
+  font-size: 1.6rem;
+  font-weight: 500;
+}
+
+button {
+  background-color: transparent;
+}
+
+.shopping-cart-icon {
+  font-size: 1.6rem;
+}
