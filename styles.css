@@ -15,9 +15,28 @@
   --clr-section-color-text: #4e4f53;
 
   --clr-bg-color: #fdfdf5;
-  --clr-bg-nav-color: #f4fbf1;
+  --clr-bg-nav-color: #f2f8ef;
   --clr-bg-card-color: #f7f7f7;
 }
+
+/*---------------- Header ----------------*/
+
+div::-webkit-scrollbar {
+  height: 5px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 20px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/*---------------- General ----------------*/
 
 html {
   font-size: 62.5%;
@@ -61,10 +80,12 @@ header {
 
 .header-icons-account {
   font-size: 3em;
+  cursor: pointer;
 }
 
 .header-icons-search {
   font-size: 2.5em;
+  cursor: pointer;
 }
 
 /*---------------- NavBar ----------------*/
@@ -167,7 +188,7 @@ main {
 
 /*---------------- Slider ----------------*/
 
-.popular-devices-title {
+.section-title {
   font-size: 2.5em;
   font-weight: 500;
   padding: 3rem 0;
@@ -200,22 +221,46 @@ main {
 
 .name-container {
   width: 15em;
-  word-wrap: break-word;
 }
 
 .item-image-container {
-  background-image: url("img/iphone.jpg");
-  mix-blend-mode: multiply;
+  /* mix-blend-mode: multiply; */
   height: 16em;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 
+/* Images */
+
+.iphone {
+  background-image: url("img/iphone.png");
+}
+
+.xiaomi {
+  background-image: url("img/xiaomi.png");
+}
+
+.samsung {
+  background-image: url("img/samsung.png");
+}
+
+.ipad {
+  background-image: url("img/ipad.png");
+}
+
+.item-content {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-end;
+  overflow: hidden;
+}
+
 .item-action-section {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: auto;
 }
 
 .buy-button-container {
@@ -227,6 +272,7 @@ main {
   justify-content: space-between;
   align-items: center;
   gap: 0.8em;
+  cursor: pointer;
   transition: background-color 300ms;
 }
 
@@ -238,6 +284,11 @@ main {
   color: var(--clr-primary-color-active-icon);
   font-size: 1.6rem;
   font-weight: 500;
+  cursor: pointer;
+}
+
+.favorite-button {
+  cursor: pointer;
 }
 
 button {
