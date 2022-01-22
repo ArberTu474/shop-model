@@ -27,8 +27,12 @@
 
 /*---------------- Header ----------------*/
 
-div::-webkit-scrollbar {
+.scroll-menu::-webkit-scrollbar {
   height: 5px;
+}
+
+.pop-up-list-container::-webkit-scrollbar {
+  width: 5px;
 }
 
 /* Handle */
@@ -423,13 +427,14 @@ button {
   bottom: 0;
   z-index: 2;
   display: flex;
-  display: none;
   justify-content: center;
   align-items: center;
 }
 
 .pop-up-list-container {
   margin: 2.4em 0 2em 0;
+  max-height: 19em;
+  overflow: auto;
 }
 
 .list-item {
