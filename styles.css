@@ -1,7 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;900&display=swap");
 :root {
   --clr-primary-color: #d8ffc5;
+  --clr-primary-color-light: #f2f7ef;
   --clr-primary-color-hover: #c7fcad;
+  --clr-primary-color-light-hover: #f2f7ef;
   --clr-primary-color-active-icon: #123500;
   --clr-primary-color-active-label: #404c38;
 
@@ -13,10 +15,14 @@
 
   --clr-header-elements-color: #4e514d;
   --clr-section-color-text: #4e4f53;
+  --clr-section-color-text-hover: #f1f1f1;
 
-  --clr-bg-color: #fdfdf5;
-  --clr-bg-nav-color: #f2f8ef;
+  --clr-border-line-color: #e4ede0;
+
+  --clr-bg-color: #fafafa;
+  --clr-bg-nav-color: #f8fff5;
   --clr-bg-card-color: #f7f7f7;
+  --clr-bg-input-color: #f6f9f4;
 }
 
 /*---------------- Header ----------------*/
@@ -37,6 +43,13 @@ div::-webkit-scrollbar {
 }
 
 /*---------------- General ----------------*/
+/* For Overlay
+html,
+body {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+} */
 
 html {
   font-size: 62.5%;
@@ -300,4 +313,190 @@ button {
 
 .shopping-cart-icon {
   font-size: 1.6rem;
+}
+
+/*---------------- Login ----------------*/
+
+.dark-overlay-login {
+  background-color: rgba(0, 0, 0, 0.63);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+}
+
+.login-pop-up {
+  background-color: var(--clr-bg-color);
+  width: fit-content;
+  padding: 2.4em;
+  margin: 3em;
+  width: 100%;
+  border-radius: 24px;
+}
+
+.pop-up-top {
+  color: var(--clr-section-color-text);
+  text-align: center;
+}
+
+.pop-up-icon {
+  font-size: 4.6rem;
+}
+
+.pop-up-title {
+  font-size: 2.4rem;
+  font-weight: 500;
+  margin-top: 1.5rem;
+}
+
+.pop-up-login {
+  margin: 2.4em 0;
+  color: var(--clr-section-color-text);
+}
+
+.input-label {
+  font-size: 1.2rem;
+  font-weight: 400;
+  margin: 0.8rem 0;
+}
+
+.input-field {
+  background-color: var(--clr-bg-input-color);
+  border: solid 1.5px rgba(78, 81, 77, 0.73);
+  border-radius: 10px;
+  font-size: 1.8rem;
+  padding: 1.2rem;
+  width: 100%;
+}
+
+.pop-up-action {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.action-button {
+  color: var(--clr-primary-color-active-icon);
+  font-size: 1.8rem;
+  font-weight: 500;
+  padding: 1rem 3rem;
+  border-radius: 500px;
+}
+
+.pop-up-secondary-button {
+  transition: background-color 300ms;
+  cursor: pointer;
+}
+
+.pop-up-secondary-button:hover {
+  background-color: var(--clr-primary-color-light-hover);
+}
+
+.pop-up-primary-button {
+  background-color: var(--clr-primary-color);
+  transition: background-color 300ms;
+  cursor: pointer;
+}
+
+.pop-up-primary-button:hover {
+  background-color: var(--clr-primary-color-hover);
+}
+
+/*---------------- Cart ----------------*/
+
+.dark-overlay-cart {
+  background-color: rgba(0, 0, 0, 0.63);
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  display: flex;
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.pop-up-list-container {
+  margin: 2.4em 0 2em 0;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: solid 1px var(--clr-border-line-color);
+  padding: 0.8em 0;
+}
+
+.list-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 4rem;
+  min-width: 4rem;
+  background-color: var(--clr-primary-color);
+  border-radius: 40px;
+  color: var(--clr-primary-color-active-icon);
+  font-size: 1.8rem;
+  font-weight: 500;
+}
+
+.list-item-name-container {
+  display: flex;
+  min-width: 10em;
+  margin: 0 1.4rem;
+  justify-self: flex-start;
+}
+
+.list-item-name {
+  color: var(--clr-section-color-text);
+  font-size: 1.6rem;
+  font-weight: 400;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+.list-item-price {
+  color: var(--clr-primary-color-active-icon);
+  background-color: var(--clr-primary-color-light);
+  font-size: 1.4rem;
+  font-weight: 500;
+  padding: 1em 1.5em;
+  border-radius: 8px;
+}
+
+.spacer {
+  min-width: 4rem;
+  min-height: 4rem;
+}
+
+.list-total-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.4em;
+}
+
+.list-item-total {
+  color: var(--clr-section-color-text);
+  font-size: 1.8rem;
+}
+
+.total-price {
+  color: var(--clr-primary-color-active-icon);
+  font-size: 2rem;
+  font-weight: 500;
+  padding: 1rem 1.5rem;
 }
