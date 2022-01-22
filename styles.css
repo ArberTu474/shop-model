@@ -20,6 +20,7 @@
   --clr-border-line-color: #e4ede0;
 
   --clr-bg-color: #fafafa;
+  --clr-bg-color-hover: #ececec;
   --clr-bg-nav-color: #f8fff5;
   --clr-bg-card-color: #f7f7f7;
   --clr-bg-input-color: #f6f9f4;
@@ -47,13 +48,11 @@
 }
 
 /*---------------- General ----------------*/
-/* For Overlay
+
 html,
 body {
   margin: 0;
-  height: 100%;
-  overflow: hidden;
-} */
+}
 
 html {
   font-size: 62.5%;
@@ -95,11 +94,19 @@ header {
   font-weight: 400;
 }
 
-.header-icons-account {
+.header-icons-account,
+.header-icons-search {
   font-size: 3em;
+  border-radius: 6px;
+  transition: background-color 300ms;
+  padding: 0.1em;
   cursor: pointer;
 }
 
+.header-icons-account:hover,
+.header-icons-search:hover {
+  background-color: var(--clr-bg-color-hover);
+}
 .header-icons-search {
   font-size: 2.5em;
   cursor: pointer;
@@ -122,7 +129,7 @@ nav {
 }
 
 .nav-icon-container {
-  background-color: var(--clr-primary-color);
+  background-color: transparent;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -331,10 +338,10 @@ button {
   right: 0;
   bottom: 0;
   z-index: 2;
-  display: flex;
   justify-content: center;
   align-items: center;
   display: none;
+  transition: 300ms;
 }
 
 .login-pop-up {
@@ -426,7 +433,7 @@ button {
   right: 0;
   bottom: 0;
   z-index: 2;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
 }

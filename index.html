@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html id="html" lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -11,14 +11,18 @@
     <link rel="stylesheet" href="styles.css" />
     <title>Shop</title>
   </head>
-  <body>
+  <body id="body">
     <header>
       <div class="header-container">
         <span class="header-icons-search material-icons-outlined">
           search
         </span>
         <h1 class="logo">Shop</h1>
-        <span id="account" class="header-icons-account material-icons">
+        <span
+          onclick="openAccount()"
+          id="account"
+          class="header-icons-account material-icons"
+        >
           account_circle
         </span>
       </div>
@@ -32,21 +36,23 @@
 
     <nav>
       <div class="nav-container">
-        <div class="home nav-item">
-          <div class="nav-icon-container">
-            <span class="material-icons nav-icon"> home </span>
+        <div id="home" class="home nav-item" onclick="homeToggle()">
+          <div class="nav-icon-container home-pill active-nav-icon">
+            <span id="homeIcon" class="material-icons nav-icon"> home </span>
           </div>
           <p class="nav-title">Home</p>
         </div>
-        <div class="offers nav-item">
-          <div class="nav-icon-container">
-            <span class="material-icons-outlined nav-icon"> local_offer </span>
+        <div id="offers" class="offers nav-item" onclick="offersToggle()">
+          <div class="nav-icon-container offers-pill">
+            <span id="offersIcon" class="material-icons-outlined nav-icon">
+              local_offer
+            </span>
           </div>
           <p class="nav-title">Offers</p>
         </div>
-        <div class="cart nav-item">
-          <div class="nav-icon-container">
-            <span class="material-icons-outlined nav-icon">
+        <div onclick="openCart()" id="cart" class="cart nav-item">
+          <div class="nav-icon-container cart-pill">
+            <span id="cartIcon" class="material-icons-outlined nav-icon">
               shopping_cart
             </span>
           </div>
@@ -245,7 +251,7 @@
     </main>
 
     <!-- Log In pop up -->
-    <div class="dark-overlay-login">
+    <div id="loginPopUp" class="dark-overlay-login">
       <div class="login-pop-up">
         <div class="pop-up-top">
           <span class="pop-up-icon material-icons"> account_circle </span>
@@ -253,27 +259,32 @@
         </div>
         <div class="pop-up-login">
           <p class="input-label">Enter your email</p>
-          <input type="text" class="input-field" />
+          <input id="email" type="text" class="input-field" />
           <p class="input-label">Enter your password</p>
-          <input type="password" class="input-field" />
+          <input id="password" type="password" class="input-field" />
         </div>
         <div class="pop-up-action">
-          <button class="action-button pop-up-secondary -button"></button>
-            Sign Up
+          <button
+            class="action-button pop-up-secondary-button"
+            onclick="closeAccount()"
+          >
+            Cancel
           </button>
-          <button class="action-button pop-up-primary-button">Log In</button>
+          <button type="submit" class="action-button pop-up-primary-button">
+            Log In
+          </button>
         </div>
       </div>
     </div>
 
     <!-- Cart pop up -->
-    <div class="dark-overlay-cart">
+    <div id="cartPopUp" class="dark-overlay-cart">
       <div class="login-pop-up">
         <div class="pop-up-top">
           <span class="pop-up-icon material-icons"> shopping_cart </span>
           <h2 class="pop-up-title">Your Cart</h2>
         </div>
-        
+
         <div class="pop-up-list-container">
           <div class="pop-up-list">
             <div class="list-item">
@@ -314,14 +325,19 @@
         </div>
         <div class="list-total-price">
           <div class="spacer"></div>
-            <p class="list-item-total">Total:</p>
-            <p class="total-price">$3000</p>
+          <p class="list-item-total">Total:</p>
+          <p class="total-price">$3000</p>
         </div>
         <div class="pop-up-action">
-          <button class="action-button pop-up-secondary-button">Cancel</button>
+          <button
+            class="action-button pop-up-secondary-button"
+            onclick="closeCart()"
+          >
+            Cancel
+          </button>
           <button class="action-button pop-up-primary-button">Buy</button>
         </div>
-      </div> 
+      </div>
     </div>
   </body>
   <script src="script/main.js"></script>
