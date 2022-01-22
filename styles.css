@@ -27,7 +27,7 @@ div::-webkit-scrollbar {
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888;
+  background: #cfcfcf;
   border-radius: 20px;
 }
 
@@ -217,6 +217,9 @@ main {
   font-size: 1.5rem;
   color: var(--clr-section-color-text);
   font-weight: 400;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 .name-container {
