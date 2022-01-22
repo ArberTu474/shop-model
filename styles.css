@@ -142,6 +142,10 @@ nav {
   font-size: 2.7em;
 }
 
+.active-nav-icon {
+    background-color: var(--clr-primary-color);
+}
+
 .nav-title {
   font-size: 1.2rem;
   font-weight: 500;
