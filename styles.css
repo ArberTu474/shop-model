@@ -143,7 +143,7 @@ nav {
 }
 
 .active-nav-icon {
-    background-color: var(--clr-primary-color);
+  background-color: var(--clr-primary-color);
 }
 
 .nav-title {
@@ -155,6 +155,11 @@ nav {
 
 .nav-item {
   cursor: pointer;
+  color: var(--clr-primary-color-active-icon);
+}
+
+.star {
+  font-size: 2.6rem;
   color: var(--clr-primary-color-active-icon);
 }
 

@@ -101,3 +101,16 @@ function homeToggle() {
   offersPill.setAttribute("class", " nav-icon-container offers-pill");
   offersIcon.setAttribute("class", "material-icons-outlined nav-icon");
 }
+
+//Favorite toggle
+
+let pressed = false;
+function favoriteToggle(x) {
+  if (pressed === false) {
+    x.classList.replace("material-icons-outlined", "material-icons");
+    pressed = true;
+  } else if (pressed === true) {
+    x.classList.replace("material-icons", "material-icons-outlined");
+    pressed = false;
+  }
+}
