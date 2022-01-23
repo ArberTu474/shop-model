@@ -31,7 +31,33 @@ const cartIcon = document.querySelector("#cartIcon");
 const cartPopUp = document.querySelector("#cartPopUp");
 const cartPill = document.querySelector(".cart-pill");
 
+let totalPrice = 0;
+
 function openCart() {
+  const listItemTotal = document.querySelector("#list-item-total-label");
+  const cartBuyBtn = document.querySelector("#cart-buy");
+  const btnAlign = document.querySelector("#pop-up-action");
+  const listTotalPrice = document.querySelector("#list-total-price");
+  const popUpListContiner = document.querySelector("#pop-up-list-container");
+  const emptyCart = document.querySelector("#empty-cart");
+
+  // checks if the total price is 0 and formats the cart pop up
+  if (totalPrice <= 0) {
+    listItemTotal.style.display = "none";
+    cartBuyBtn.style.display = "none";
+    listTotalPrice.style.display = "none";
+    popUpListContiner.style.display = "none";
+    emptyCart.style.display = "flex";
+    btnAlign.style.justifyContent = "center";
+  } else {
+    listItemTotal.style.display = "";
+    cartBuyBtn.style.display = "";
+    popUpListContiner.style.display = "block";
+    listTotalPrice.style.display = "flex";
+    emptyCart.style.display = "none";
+    btnAlign.style.justifyContent = "space-between";
+  }
+
   cartIcon.setAttribute("class", "material-icons nav-icon");
   cartPill.setAttribute(
     "class",
@@ -65,6 +91,8 @@ function closeCart() {
   );
   homeIcon.setAttribute("class", "material-icons nav-icon");
 }
+
+// OFFERS
 
 const offers = document.querySelector("#offers");
 const offersIcon = document.querySelector("#offersIcon");
@@ -113,4 +141,64 @@ function favoriteToggle(x) {
     x.classList.replace("material-icons", "material-icons-outlined");
     pressed = false;
   }
+}
+
+//Cart functionality
+
+let price;
+let itemsNumber = 0;
+
+function addCart(e) {
+  //get from the element the price and converting it to a number
+  price = parseInt(e.innerHTML.slice(20, 30));
+
+  totalPriceCal();
+  addCartItem();
+  console.log(totalPrice);
+  console.log(itemsNumber);
+}
+
+//Calculate the cart total price
+const totalPriceLabel = document.querySelector("#total-price-label");
+
+function totalPriceCal() {
+  totalPrice = totalPrice + price;
+  itemsNumber++;
+  totalPriceLabel.textContent = `$${totalPrice}`;
+}
+
+//Creates list items
+const popUpListContainer = document.querySelector("#pop-up-list-container");
+
+function addCartItem() {
+  let newPopUpList = document.createElement("div");
+  newPopUpList.classList.add("pop-up-list");
+
+  let newListItem = document.createElement("div");
+  newListItem.classList.add("list-item");
+
+  let newListIndicator = document.createElement("div");
+  newListIndicator.classList.add("list-indicator");
+  newListIndicator.textContent = itemsNumber;
+
+  let newListItemNameContainer = document.createElement("div");
+  newListItemNameContainer.classList.add("list-item-name-container");
+
+  let newListItemName = document.createElement("p");
+  newListItemName.classList.add("list-item-name");
+  newListItemName.textContent = "iPhone 13 Por Max refubished";
+
+  let newListItemPrice = document.createElement("div");
+  newListItemPrice.classList.add("list-item-price");
+  newListItemPrice.textContent = `$${price}`;
+
+  popUpListContainer
+    .appendChild(newPopUpList)
+    .appendChild(newListItem)
+    .appendChild(newListIndicator);
+
+  newListItem
+    .appendChild(newListItemNameContainer)
+    .appendChild(newListItemName);
+  newListItem.appendChild(newListItemPrice);
 }

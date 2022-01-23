@@ -83,12 +83,13 @@
             <div class="item-content">
               <div class="iphone item-image-container"></div>
               <div class="item-action-section">
-                <div class="buy-button-container">
-                  <button class="buy-button">$800</button>
+                <button class="buy-button" onclick="addCart(this)">
+                  $1000
                   <span class="shopping-cart-icon material-icons-outlined">
                     add_shopping_cart
                   </span>
-                </div>
+                </button>
+
                 <div class="favorite-button">
                   <span
                     onclick="favoriteToggle(this)"
@@ -108,12 +109,13 @@
             <div class="item-content">
               <div class="xiaomi item-image-container"></div>
               <div class="item-action-section">
-                <div class="buy-button-container">
-                  <button class="buy-button">$350</button>
+                <button class="buy-button" onclick="addCart(this)">
+                  $350
                   <span class="shopping-cart-icon material-icons-outlined">
                     add_shopping_cart
                   </span>
-                </div>
+                </button>
+
                 <div class="favorite-button">
                   <span
                     onclick="favoriteToggle(this)"
@@ -134,12 +136,12 @@
             <div class="item-content">
               <div class="samsung item-image-container"></div>
               <div class="item-action-section">
-                <div class="buy-button-container">
-                  <button class="buy-button">$800</button>
+                <button class="buy-button" onclick="addCart(this)">
+                  $800
                   <span class="shopping-cart-icon material-icons-outlined">
                     add_shopping_cart
                   </span>
-                </div>
+                </button>
                 <div class="favorite-button">
                   <span
                     onclick="favoriteToggle(this)"
@@ -160,12 +162,12 @@
             <div class="item-content">
               <div class="ipad item-image-container"></div>
               <div class="item-action-section">
-                <div class="buy-button-container">
-                  <button class="buy-button">$1200</button>
+                <button class="buy-button" onclick="addCart(this)">
+                  $1200
                   <span class="shopping-cart-icon material-icons-outlined">
                     add_shopping_cart
                   </span>
-                </div>
+                </button>
                 <div class="favorite-button">
                   <span
                     onclick="favoriteToggle(this)"
@@ -192,12 +194,12 @@
             <div class="item-content">
               <div class="iphone item-image-container"></div>
               <div class="item-action-section">
-                <div class="buy-button-container">
-                  <button class="buy-button">$800</button>
+                <button class="buy-button" onclick="addCart(this)">
+                  $1000
                   <span class="shopping-cart-icon material-icons-outlined">
                     add_shopping_cart
                   </span>
-                </div>
+                </button>
                 <div class="favorite-button">
                   <span
                     onclick="favoriteToggle(this)"
@@ -217,12 +219,13 @@
             <div class="item-content">
               <div class="xiaomi item-image-container"></div>
               <div class="item-action-section">
-                <div class="buy-button-container">
-                  <button class="buy-button">$350</button>
+                <button class="buy-button" onclick="addCart(this)">
+                  $350
                   <span class="shopping-cart-icon material-icons-outlined">
                     add_shopping_cart
                   </span>
-                </div>
+                </button>
+
                 <div class="favorite-button">
                   <span
                     onclick="favoriteToggle(this)"
@@ -243,12 +246,12 @@
             <div class="item-content">
               <div class="samsung item-image-container"></div>
               <div class="item-action-section">
-                <div class="buy-button-container">
-                  <button class="buy-button">$800</button>
+                <button class="buy-button" onclick="addCart(this)">
+                  $800
                   <span class="shopping-cart-icon material-icons-outlined">
                     add_shopping_cart
                   </span>
-                </div>
+                </button>
                 <div class="favorite-button">
                   <span
                     onclick="favoriteToggle(this)"
@@ -269,12 +272,12 @@
             <div class="item-content">
               <div class="ipad item-image-container"></div>
               <div class="item-action-section">
-                <div class="buy-button-container">
-                  <button class="buy-button">$1200</button>
+                <button class="buy-button" onclick="addCart(this)">
+                  $1200
                   <span class="shopping-cart-icon material-icons-outlined">
                     add_shopping_cart
                   </span>
-                </div>
+                </button>
                 <div class="favorite-button">
                   <span
                     onclick="favoriteToggle(this)"
@@ -325,23 +328,14 @@
           <h2 class="pop-up-title">Your Cart</h2>
         </div>
 
-        <div class="pop-up-list-container">
-          <div class="pop-up-list">
-            <div class="list-item">
-              <div class="list-indicator">1</div>
-              <div class="list-item-name-container">
-                <p class="list-item-name">iPhone 13 Por Max refubished</p>
+        <div id="pop-up-list-container" class="pop-up-list-container">
+          <!-- <div class="pop-up-list" id="pop-up-list">
+            <div class="list-item" id="list-item">
+              <div class="list-indicator" id="list-indicator">3</div>
+              <div class="list-item-name-container" id="list-item-name-container">
+                <p class="list-item-name" id="list-item-name">iPhone 13 Por Max refubished</p>
               </div>
-              <div class="div list-item-price">$1000</div>
-            </div>
-          </div>
-          <div class="pop-up-list">
-            <div class="list-item">
-              <div class="list-indicator">2</div>
-              <div class="list-item-name-container">
-                <p class="list-item-name">iPhone 13 Por Max refubished</p>
-              </div>
-              <div class="div list-item-price">$1000</div>
+              <div class="list-item-price" id="list-item-price">$1000</div>
             </div>
           </div>
           <div class="pop-up-list">
@@ -350,32 +344,32 @@
               <div class="list-item-name-container">
                 <p class="list-item-name">iPhone 13 Por Max refubished</p>
               </div>
-              <div class="div list-item-price">$1000</div>
+              <div class="list-item-price">$1000</div>
             </div>
-          </div>
-          <div class="pop-up-list">
-            <div class="list-item">
-              <div class="list-indicator">3</div>
-              <div class="list-item-name-container">
-                <p class="list-item-name">iPhone 13 Por Max refubished</p>
-              </div>
-              <div class="div list-item-price">$1000</div>
-            </div>
-          </div>
+          </div> -->
         </div>
-        <div class="list-total-price">
+        <div id="list-total-price" class="list-total-price">
           <div class="spacer"></div>
-          <p class="list-item-total">Total:</p>
-          <p class="total-price">$3000</p>
+          <p id="list-item-total-label" class="list-item-total">Total:</p>
+          <p id="total-price-label" class="total-price"></p>
         </div>
-        <div class="pop-up-action">
+        <div id="empty-cart" class="empty-cart">
+          <div class="empty-cart-img">
+            <img src="img/empty.svg" alt="empty icon" />
+          </div>
+          Your cart is empty.<br />
+          Buy something to proceed.
+        </div>
+        <div id="pop-up-action" class="pop-up-action">
           <button
             class="action-button pop-up-secondary-button"
             onclick="closeCart()"
           >
             Cancel
           </button>
-          <button class="action-button pop-up-primary-button">Buy</button>
+          <button id="cart-buy" class="action-button pop-up-primary-button">
+            Buy
+          </button>
         </div>
       </div>
     </div>
