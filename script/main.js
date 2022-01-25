@@ -161,7 +161,7 @@ function addCart(e) {
   price = parseInt(e.innerHTML.slice(20, 30));
 
   totalPriceCal();
-  addCartItem();
+  addCartItem(e.name);
   console.log(totalPrice);
   console.log(itemsNumber);
 }
@@ -178,7 +178,7 @@ function totalPriceCal() {
 //Creates list items
 const popUpListContainer = document.querySelector("#pop-up-list-container");
 
-function addCartItem() {
+function addCartItem(name) {
   let newPopUpList = document.createElement("div");
   newPopUpList.classList.add("pop-up-list");
 
@@ -195,7 +195,7 @@ function addCartItem() {
 
   let newListItemName = document.createElement("p");
   newListItemName.classList.add("list-item-name");
-  newListItemName.textContent = "iPhone 13 Por Max refubished";
+  newListItemName.textContent = name;
 
   let newListItemPrice = document.createElement("div");
   newListItemPrice.classList.add("list-item-price");
