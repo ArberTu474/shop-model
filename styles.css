@@ -103,6 +103,11 @@ header {
   cursor: pointer;
 }
 
+.header-icons-account:hover,
+.header-icons-search:hover {
+  background-color: var(--clr-section-color-text-hover);
+}
+
 .header-icons-search {
   font-size: 2.5em;
   cursor: pointer;
@@ -495,9 +500,17 @@ button {
   border-radius: 8px;
 }
 
-.spacer {
-  min-width: 4rem;
-  min-height: 4rem;
+.bin {
+  color: var(--clr-section-color-text);
+  font-size: 3rem;
+  padding: 0.5rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 300ms;
+}
+
+.bin:hover {
+  background-color: var(--clr-section-color-text-hover);
 }
 
 .list-total-price {

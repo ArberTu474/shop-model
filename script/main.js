@@ -263,3 +263,14 @@ function totalPriceCalDecresase() {
   totalPrice = totalPrice - decreasePrice;
   totalPriceLabel.textContent = `$${totalPrice}`;
 }
+
+// Clears all the cart list items
+
+const bin = document.querySelector("#bin");
+
+bin.addEventListener("click", function () {
+  popUpListContainer.innerHTML = "";
+  totalPrice = 0;
+  cartUiUpdate();
+  pricesReset();
+});
