@@ -103,7 +103,6 @@ header {
   cursor: pointer;
 }
 
-
 .header-icons-search {
   font-size: 2.5em;
   cursor: pointer;
@@ -469,6 +468,7 @@ button {
   color: var(--clr-primary-color-active-icon);
   font-size: 1.8rem;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .list-item-name-container {

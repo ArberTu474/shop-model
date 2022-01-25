@@ -78,7 +78,9 @@
           <!-- iPhone 13 -->
           <div class="item">
             <div class="name-container">
-              <h2 class="item-name">iPhone 13 Pro Max refubished</h2>
+              <h2 name="iPhone 13 Pro Max refubished" class="item-name">
+                iPhone 13 Pro Max refubished
+              </h2>
             </div>
             <div class="item-content">
               <div class="iphone item-image-container"></div>
@@ -104,7 +106,9 @@
           <!-- Xiaomi -->
           <div class="item">
             <div class="name-container">
-              <h2 class="item-name">Xiaomi Note 10 Pro Max</h2>
+              <h2 name="Xiaomi Note 10 Pro Max" class="item-name">
+                Xiaomi Note 10 Pro Max
+              </h2>
             </div>
             <div class="item-content">
               <div class="xiaomi item-image-container"></div>
@@ -131,7 +135,9 @@
           <!-- Samsung -->
           <div class="item">
             <div class="name-container">
-              <h2 class="item-name">Samsung Galaxy Note 20 Ultra 5G</h2>
+              <h2 name="Samsung Galaxy Note 20 Ultra 5G" class="item-name">
+                Samsung Galaxy Note 20 Ultra 5G
+              </h2>
             </div>
             <div class="item-content">
               <div class="samsung item-image-container"></div>
@@ -157,10 +163,15 @@
           <!-- iPad -->
           <div class="item">
             <div class="name-container">
-              <h2 class="item-name">iPad Pro 3rd Gen</h2>
+              <h2 name="iPad Pro 3rd Gen" class="item-name">
+                iPad Pro 3rd Gen
+              </h2>
             </div>
             <div class="item-content">
-              <div class="ipad item-image-container"></div>
+              <div
+                id="item-image-container"
+                class="ipad item-image-container"
+              ></div>
               <div class="item-action-section">
                 <button class="buy-button" onclick="addCart(this)">
                   $1200
@@ -189,7 +200,9 @@
           <!-- iPhone 13 -->
           <div class="item">
             <div class="name-container">
-              <h2 class="item-name">iPhone 13 Pro Max refubished</h2>
+              <h2 name="iPhone 13 Pro Max refubished" class="item-name">
+                iPhone 13 Pro Max refubished
+              </h2>
             </div>
             <div class="item-content">
               <div class="iphone item-image-container"></div>
@@ -214,7 +227,9 @@
           <!-- Xiaomi -->
           <div class="item">
             <div class="name-container">
-              <h2 class="item-name">Xiaomi Note 10 Pro Max</h2>
+              <h2 name="Xiaomi Note 10 Pro Max" class="item-name">
+                Xiaomi Note 10 Pro Max
+              </h2>
             </div>
             <div class="item-content">
               <div class="xiaomi item-image-container"></div>
@@ -241,7 +256,9 @@
           <!-- Samsung -->
           <div class="item">
             <div class="name-container">
-              <h2 class="item-name">Samsung Galaxy Note 20 Ultra 5G</h2>
+              <h2 name="Samsung Galaxy Note 20 Ultra 5G" class="item-name">
+                Samsung Galaxy Note 20 Ultra 5G
+              </h2>
             </div>
             <div class="item-content">
               <div class="samsung item-image-container"></div>
@@ -267,7 +284,9 @@
           <!-- iPad -->
           <div class="item">
             <div class="name-container">
-              <h2 class="item-name">iPad Pro 3rd Gen</h2>
+              <h2 name="iPad Pro 3rd Gen" class="item-name">
+                iPad Pro 3rd Gen
+              </h2>
             </div>
             <div class="item-content">
               <div class="ipad item-image-container"></div>
@@ -328,26 +347,7 @@
           <h2 class="pop-up-title">Your Cart</h2>
         </div>
 
-        <div id="pop-up-list-container" class="pop-up-list-container">
-          <!-- <div class="pop-up-list" id="pop-up-list">
-            <div class="list-item" id="list-item">
-              <div class="list-indicator" id="list-indicator">3</div>
-              <div class="list-item-name-container" id="list-item-name-container">
-                <p class="list-item-name" id="list-item-name">iPhone 13 Por Max refubished</p>
-              </div>
-              <div class="list-item-price" id="list-item-price">$1000</div>
-            </div>
-          </div>
-          <div class="pop-up-list">
-            <div class="list-item">
-              <div class="list-indicator">3</div>
-              <div class="list-item-name-container">
-                <p class="list-item-name">iPhone 13 Por Max refubished</p>
-              </div>
-              <div class="list-item-price">$1000</div>
-            </div>
-          </div> -->
-        </div>
+        <div id="pop-up-list-container" class="pop-up-list-container"></div>
         <div id="list-total-price" class="list-total-price">
           <div class="spacer"></div>
           <p id="list-item-total-label" class="list-item-total">Total:</p>
@@ -374,5 +374,10 @@
       </div>
     </div>
   </body>
+  <script
+    src="https://code.jquery.com/jquery-3.6.0.slim.js"
+    integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY="
+    crossorigin="anonymous"
+  ></script>
   <script src="script/main.js"></script>
 </html>

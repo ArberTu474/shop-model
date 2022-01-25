@@ -33,31 +33,15 @@ const cartPill = document.querySelector(".cart-pill");
 
 let totalPrice = 0;
 
+const listItemTotal = document.querySelector("#list-item-total-label");
+const cartBuyBtn = document.querySelector("#cart-buy");
+const btnAlign = document.querySelector("#pop-up-action");
+const listTotalPrice = document.querySelector("#list-total-price");
+const popUpListContiner = document.querySelector("#pop-up-list-container");
+const emptyCart = document.querySelector("#empty-cart");
+
 function openCart() {
-  const listItemTotal = document.querySelector("#list-item-total-label");
-  const cartBuyBtn = document.querySelector("#cart-buy");
-  const btnAlign = document.querySelector("#pop-up-action");
-  const listTotalPrice = document.querySelector("#list-total-price");
-  const popUpListContiner = document.querySelector("#pop-up-list-container");
-  const emptyCart = document.querySelector("#empty-cart");
-
-  // checks if the total price is 0 and formats the cart pop up
-  if (totalPrice <= 0) {
-    listItemTotal.style.display = "none";
-    cartBuyBtn.style.display = "none";
-    listTotalPrice.style.display = "none";
-    popUpListContiner.style.display = "none";
-    emptyCart.style.display = "flex";
-    btnAlign.style.justifyContent = "center";
-  } else {
-    listItemTotal.style.display = "";
-    cartBuyBtn.style.display = "";
-    popUpListContiner.style.display = "block";
-    listTotalPrice.style.display = "flex";
-    emptyCart.style.display = "none";
-    btnAlign.style.justifyContent = "space-between";
-  }
-
+  cartUiUpdate();
   cartIcon.setAttribute("class", "material-icons nav-icon");
   cartPill.setAttribute(
     "class",
@@ -73,6 +57,30 @@ function openCart() {
   offersIcon.setAttribute("class", "material-icons-outlined nav-icon");
   homePill.setAttribute("class", " nav-icon-container home-pill");
   homeIcon.setAttribute("class", "material-icons-outlined nav-icon");
+}
+
+// checks if the total price is 0 and formats the cart pop up
+function cartUiUpdate() {
+  if (totalPrice <= 0) {
+    listItemTotal.style.display = "none";
+    cartBuyBtn.style.display = "none";
+    listTotalPrice.style.display = "none";
+    popUpListContiner.style.display = "none";
+    emptyCart.style.display = "flex";
+    btnAlign.style.justifyContent = "center";
+  } else {
+    listItemTotal.style.display = "";
+    cartBuyBtn.style.display = "";
+    popUpListContiner.style.display = "block";
+    listTotalPrice.style.display = "flex";
+    emptyCart.style.display = "none";
+    btnAlign.style.justifyContent = "space-between";
+  }
+}
+
+function pricesReset() {
+  price = 0;
+  itemsNumber = 0;
 }
 
 function closeCart() {
@@ -179,6 +187,7 @@ function addCartItem() {
 
   let newListIndicator = document.createElement("div");
   newListIndicator.classList.add("list-indicator");
+  newListIndicator.setAttribute("onclick", "removeCartItem(this)");
   newListIndicator.textContent = itemsNumber;
 
   let newListItemNameContainer = document.createElement("div");
@@ -201,4 +210,56 @@ function addCartItem() {
     .appendChild(newListItemNameContainer)
     .appendChild(newListItemName);
   newListItem.appendChild(newListItemPrice);
+}
+
+//Remvoe items from cart list by clicking the item indicator
+
+let listIndicator = document.querySelector("#item-image-container");
+let popUpList = document.querySelector(".pop-up-list");
+
+function updateListItemIndicator() {
+  let length =
+    popUpListContainer.getElementsByClassName("list-indicator").length;
+
+  var indArray = $(".list-indicator").toArray();
+
+  for (var i = 0; i < indArray.length; i++) {
+    indArray[i].innerHTML = i + 1;
+
+    if (i === 0) {
+      indArray[i].value = i;
+    }
+  }
+  cartUiUpdate();
+
+  if (indArray.length === 0) {
+    pricesReset();
+  }
+}
+
+let decreasePrice;
+
+function removeCartItem(x) {
+  let indexNr = x.textContent - 1;
+
+  // Decreases the total price
+  decreasePrice = popUpListContainer
+    .getElementsByClassName("list-item-price")
+    [indexNr].innerHTML.slice(1);
+
+  decreasePrice = parseInt(decreasePrice);
+  console.log(decreasePrice);
+  totalPriceCalDecresase();
+
+  // Removes cart item
+  popUpListContainer.removeChild(popUpListContainer.childNodes[indexNr]);
+
+  updateListItemIndicator();
+}
+
+// Calculates the total price when it is decreased
+function totalPriceCalDecresase() {
+  itemsNumber--; // Removes one 1 item counter from the cart list
+  totalPrice = totalPrice - decreasePrice;
+  totalPriceLabel.textContent = `$${totalPrice}`;
 }
