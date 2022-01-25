@@ -53,8 +53,8 @@ function openCart() {
   body.style.height = "100%";
   body.style.overflow = "hidden";
   // Remove styling form others
-  offersPill.setAttribute("class", " nav-icon-container offers-pill");
-  offersIcon.setAttribute("class", "material-icons-outlined nav-icon");
+  bookmarkPill.setAttribute("class", " nav-icon-container offers-pill");
+  bookmarkIcon.innerHTML = "bookmark_outline";
   homePill.setAttribute("class", " nav-icon-container home-pill");
   homeIcon.setAttribute("class", "material-icons-outlined nav-icon");
 }
@@ -102,16 +102,11 @@ function closeCart() {
 
 // OFFERS
 
-const offers = document.querySelector("#offers");
-const offersIcon = document.querySelector("#offersIcon");
-const offersPill = document.querySelector(".offers-pill");
+const bookmarkIcon = document.querySelector("#bookmarkIcon");
+const bookmarkPill = document.querySelector(".bookmark-pill");
 
-function offersToggle() {
-  offersPill.setAttribute(
-    "class",
-    " nav-icon-container offers-pill active-nav-icon"
-  );
-  offersIcon.setAttribute("class", "material-icons nav-icon");
+function bookmarkToggle(e) {
+  bookmarkIcon.innerHTML = "bookmark";
 
   //remove styling from others
   homePill.setAttribute("class", " nav-icon-container home-pill");
@@ -134,8 +129,8 @@ function homeToggle() {
   homeIcon.setAttribute("class", "material-icons nav-icon");
 
   //Remove styling from othres
-  offersPill.setAttribute("class", " nav-icon-container offers-pill");
-  offersIcon.setAttribute("class", "material-icons-outlined nav-icon");
+  bookmarkPill.setAttribute("class", " nav-icon-container offers-pill");
+  bookmarkIcon.innerHTML = "bookmark_outline";
 }
 
 //Favorite toggle
