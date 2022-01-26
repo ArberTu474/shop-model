@@ -37,6 +37,11 @@
   height: 5px;
 }
 
+.bookmark-list-container::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: #cfcfcf;
@@ -163,6 +168,7 @@ nav {
 .bookmark {
   font-size: 2.6rem;
   color: var(--clr-primary-color-active-icon);
+  cursor: pointer;
 }
 
 /*---------------- FAB ----------------*/
@@ -405,6 +411,12 @@ button {
   align-items: center;
 }
 
+.bookmark-cancel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .action-button {
   color: var(--clr-primary-color-active-icon);
   font-size: 1.8rem;
@@ -491,6 +503,7 @@ button {
   overflow: hidden;
   white-space: nowrap;
 }
+
 .list-item-price {
   color: var(--clr-primary-color-active-icon);
   background-color: var(--clr-primary-color-light);
@@ -532,7 +545,7 @@ button {
   padding: 1rem 1.5rem;
 }
 
-.empty-cart {
+.empty {
   color: var(--clr-section-color-text);
   font-size: 1.4rem;
   text-align: center;
@@ -542,10 +555,49 @@ button {
   justify-content: center;
 }
 
-.empty-cart-img {
+.empty-img {
   margin-bottom: 2.4rem;
 }
 
-.empty-cart-img img {
+.empty-img img {
   width: 12rem;
+}
+
+/*---------------- Bookmark ----------------*/
+
+.bookmark-list-container {
+  margin: 0 0 2em 0;
+  max-height: 19em;
+  overflow: auto;
+}
+
+.bookmark-list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: solid 1px var(--clr-border-line-color);
+  /* padding: 0.8rem 0; */
+}
+
+.list-img {
+  max-width: 6rem;
+}
+
+.list-title {
+  color: var(--clr-section-color-text);
+  font-size: 1.6rem;
+  font-weight: 400;
+  margin: 0 0.8rem;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.list-bookmark {
+  color: var(--clr-primary-color-active-icon);
+  font-size: 2.6rem;
+  background-color: var(--clr-primary-color-light);
+  padding: 0.7rem;
+  border-radius: 500px;
+  cursor: pointer;
 }

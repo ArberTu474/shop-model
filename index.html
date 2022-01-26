@@ -95,12 +95,16 @@
                 </button>
 
                 <div class="favorite-button">
-                  <span
+                  <button
                     onclick="favoriteToggle(this)"
                     class="material-icons-outlined bookmark"
+                    name="iPhone 13 Pro Max refubished"
+                    image="img/iphone.png"
+                    pressed="false"
+                    number="1"
                   >
                     bookmark_add
-                  </span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -127,12 +131,16 @@
                 </button>
 
                 <div class="favorite-button">
-                  <span
+                  <button
                     onclick="favoriteToggle(this)"
                     class="material-icons-outlined bookmark"
+                    name="Xiaomi Note 10 Pro Max"
+                    image="img/xiaomi.png"
+                    pressed="false"
+                    number="2"
                   >
                     bookmark_add
-                  </span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -159,12 +167,16 @@
                   </span>
                 </button>
                 <div class="favorite-button">
-                  <span
+                  <button
                     onclick="favoriteToggle(this)"
+                    name="Samsung Galaxy Note 20 Ultra 5G"
+                    image="img/samsung.png"
                     class="material-icons-outlined bookmark"
+                    pressed="false"
+                    number="3"
                   >
                     bookmark_add
-                  </span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -192,12 +204,16 @@
                   </span>
                 </button>
                 <div class="favorite-button">
-                  <span
+                  <button
+                    name="iPad Pro 3rd Gen"
+                    image="img/ipad.png"
                     onclick="favoriteToggle(this)"
                     class="material-icons-outlined bookmark"
+                    pressed="false"
+                    number="4"
                   >
                     bookmark_add
-                  </span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -228,12 +244,16 @@
                   </span>
                 </button>
                 <div class="favorite-button">
-                  <span
+                  <button
+                    name="iPhone 13 Pro Max refubished"
+                    image="img/iphone.png"
                     onclick="favoriteToggle(this)"
                     class="material-icons-outlined bookmark"
+                    pressed="false"
+                    number="5"
                   >
                     bookmark_add
-                  </span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -258,12 +278,16 @@
                 </button>
 
                 <div class="favorite-button">
-                  <span
+                  <button
+                    name="Xiaomi Note 10 Pro Max"
+                    image="img/xiaomi.png"
                     onclick="favoriteToggle(this)"
                     class="material-icons-outlined bookmark"
+                    pressed="false"
+                    number="6"
                   >
                     bookmark_add
-                  </span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -288,12 +312,16 @@
                   </span>
                 </button>
                 <div class="favorite-button">
-                  <span
+                  <button
+                    name="Samsung Galaxy Note 20 Ultra 5G"
+                    image="img/samsung.png"
                     onclick="favoriteToggle(this)"
                     class="material-icons-outlined bookmark"
+                    pressed="false"
+                    number="7"
                   >
                     bookmark_add
-                  </span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -318,12 +346,16 @@
                   </span>
                 </button>
                 <div class="favorite-button">
-                  <span
+                  <button
+                    name="iPad Pro 3rd Gen"
+                    image="img/ipad.png"
                     onclick="favoriteToggle(this)"
                     class="material-icons-outlined bookmark"
+                    pressed="false"
+                    number="8"
                   >
                     bookmark_add
-                  </span>
+                  </button>
                 </div>
               </div>
             </div>
@@ -373,8 +405,8 @@
           <p id="list-item-total-label" class="list-item-total">Total:</p>
           <p id="total-price-label" class="total-price"></p>
         </div>
-        <div id="empty-cart" class="empty-cart">
-          <div class="empty-cart-img">
+        <div id="empty-cart" class="empty">
+          <div class="empty-img">
             <img src="img/empty.svg" alt="empty icon" />
           </div>
           Your cart is empty.<br />
@@ -389,6 +421,42 @@
           </button>
           <button id="cart-buy" class="action-button pop-up-primary-button">
             Buy
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bookmark pop up -->
+    <div id="bookmarkPopUp" class="dark-overlay-cart">
+      <div class="login-pop-up">
+        <div class="pop-up-top">
+          <span class="pop-up-icon material-icons"> bookmark </span>
+          <h2 class="pop-up-title">Your Bookmark</h2>
+        </div>
+        <div id="bookmark-list-container" class="bookmark-list-container">
+          <!-- <div class="bookmark-list-item">
+            <img class="list-img" src="img/iphone.png" />
+            <h2 class="list-title">Iphone 13 Pro Max</h2>
+            <span class="material-icons list-bookmark"> bookmark_add </span>
+          </div>
+          <div class="bookmark-list-item">
+            <img class="list-img" src="img/iphone.png" />
+            <h2 class="list-title">Iphone 13 Pro Max</h2>
+            <span class="material-icons list-bookmark"> bookmark_add </span>
+          </div> -->
+          <div id="empty-bookmark" class="empty">
+            <div class="empty-img">
+              <img src="img/bookmark-empty.svg" alt="empty icon" />
+            </div>
+            Your bookmark is empty.
+          </div>
+        </div>
+        <div id="pop-up-action" class="pop-up-action bookmark-cancel">
+          <button
+            class="action-button pop-up-secondary-button"
+            onclick="closeBookmark()"
+          >
+            Cancel
           </button>
         </div>
       </div>
