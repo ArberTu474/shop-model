@@ -24,6 +24,8 @@
   --clr-bg-nav-color: #f8fff5;
   --clr-bg-card-color: #f7f7f7;
   --clr-bg-input-color: #f6f9f4;
+
+  --screen-width: 460px;
 }
 
 /*---------------- Header ----------------*/
@@ -76,6 +78,10 @@ html {
 
 body {
   background-color: var(--clr-bg-color);
+  margin: 0 auto;
+  position: relative;
+  width: var(--screen-width);
+  box-shadow: 0px 4px 6px rgba(129, 129, 129, 0.23);
 }
 
 /*---------------- Header ----------------*/
@@ -93,6 +99,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 2em;
+  width: var(--screen-width);
 }
 
 .logo {
@@ -133,6 +140,7 @@ nav {
   justify-content: space-evenly;
   align-items: center;
   padding-top: 1.2em;
+  width: var(--screen-width);
 }
 
 .nav-icon-container {
@@ -175,7 +183,7 @@ nav {
 
 .fab {
   background-color: var(--clr-fab-color);
-  position: fixed;
+  position: absolute;
   border-radius: 16px;
   box-shadow: 0px 4px 6px rgba(129, 129, 129, 0.23);
   right: 2.5em;
